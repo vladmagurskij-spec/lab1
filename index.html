@@ -17,7 +17,9 @@
 <body>
   <header>
     <h1>Лабораторна робота №1 — Форма реєстрації</h1>
-    <p class="note">Див. лабораторне: <a id="labsLink" href="https://classroom.google.com/u/0/w/NzgwMjk0NzgwNjA1/t/all?hl=ru" target="_blank">Список лабораторних</a></p>
+    <p class="note">Див. лабораторне: 
+      <a href="https://classroom.google.com/u/0/w/NzgwMjk0NzgwNjA1/t/all?hl=ru" target="_blank">Список лабораторних</a>
+    </p>
   </header>
 
   <form id="registrationForm" action="https://webhook.site/75fa0aff-18c4-4336-acde-6374b6be37ce" method="post" novalidate>
@@ -26,27 +28,25 @@
 
       <div class="row">
         <div>
-          <label for="firstName">Ім'я <span aria-hidden="true">*</span></label>
+          <label for="firstName">Ім'я *</label>
           <input type="text" id="firstName" name="firstName" required />
         </div>
-
         <div>
-          <label for="lastName">Прізвище <span aria-hidden="true">*</span></label>
+          <label for="lastName">Прізвище *</label>
           <input type="text" id="lastName" name="lastName" required />
         </div>
       </div>
 
-      <label for="email">Електронна пошта <span aria-hidden="true">*</span></label>
+      <label for="email">Електронна пошта *</label>
       <input type="email" id="email" name="email" required />
 
       <div class="row">
         <div>
-          <label for="password">Пароль <span aria-hidden="true">*</span></label>
+          <label for="password">Пароль *</label>
           <input type="password" id="password" name="password" required minlength="6" />
         </div>
-
         <div>
-          <label for="confirmPassword">Підтвердження паролю <span aria-hidden="true">*</span></label>
+          <label for="confirmPassword">Підтвердження паролю *</label>
           <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6" />
         </div>
       </div>
@@ -66,12 +66,10 @@
       <div class="actions">
         <input type="submit" value="Зареєструватися" />
       </div>
-
     </fieldset>
   </form>
 
   <script>
-    // Простенька клієнтська перевірка — зупиняє відправлення якщо паролі не співпадають.
     document.getElementById('registrationForm').addEventListener('submit', function (e) {
       var pw = document.getElementById('password').value;
       var cpw = document.getElementById('confirmPassword').value;
@@ -79,13 +77,8 @@
         e.preventDefault();
         alert('Паролі не співпадають. Будь ласка, перевірте.');
         document.getElementById('confirmPassword').focus();
-        return false;
       }
     });
   </script>
-
-  <footer style="margin-top:2rem; font-size:0.9rem; color:#666;">
-    <p>Файл згенеровано для лабораторної. Використано реальні посилання.</p>
-  </footer>
 </body>
 </html>
